@@ -3,327 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>테슬라 모델3 한국 가격표 (2022~2025)</title>
+<title>테슬라 모델3 한국 가격표 (2022~2026)</title>
 <link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --bg:#ffffff;--bg2:#f7f7f5;--bg3:#f1f0ed;
-  --tx:#1a1a1a;--tx2:#6b6b6b;--tx3:#9b9b9b;
-  --bd:#e3e2de;--bd2:#d4d3cf;
-  --accent:#2383e2;--accent-bg:#e8f0fe;
-  --warn-bg:#fef3cd;--warn-tx:#856404;
-  --radius:6px;--radius-lg:8px;
-  --font:'Pretendard Variable','Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-}
-@media(prefers-color-scheme:dark){
-  :root{
-    --bg:#191919;--bg2:#252525;--bg3:#2d2d2d;
-    --tx:#e0e0e0;--tx2:#999;--tx3:#666;
-    --bd:#3a3a3a;--bd2:#4a4a4a;
-    --accent:#529cca;--accent-bg:#1a2d3d;
-    --warn-bg:#3d3520;--warn-tx:#d4a843;
-  }
-}
+:root{--bg:#fff;--bg2:#f7f7f5;--tx:#1a1a1a;--tx2:#6b6b6b;--tx3:#9b9b9b;--bd:#e3e2de;--bd2:#d4d3cf;--accent:#2383e2;--accent-bg:#e8f0fe;--warn-bg:#fef3cd;--warn-tx:#856404;--radius:6px;--radius-lg:8px;--font:'Pretendard Variable','Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+@media(prefers-color-scheme:dark){:root{--bg:#191919;--bg2:#252525;--tx:#e0e0e0;--tx2:#999;--tx3:#666;--bd:#3a3a3a;--bd2:#4a4a4a;--accent:#529cca;--accent-bg:#1a2d3d;--warn-bg:#3d3520;--warn-tx:#d4a843;}}
 body{font-family:var(--font);background:var(--bg);color:var(--tx);font-size:14px;line-height:1.6;padding:20px;max-width:720px;margin:0 auto;}
 h2{font-size:20px;font-weight:600;margin-bottom:2px;}
 .sub{font-size:12px;color:var(--tx2);margin-bottom:20px;}
 label{font-size:13px;color:var(--tx2);display:block;margin-bottom:4px;}
-select,input{width:100%;padding:7px 10px;border:1px solid var(--bd);border-radius:var(--radius);background:var(--bg);color:var(--tx);font-family:var(--font);font-size:13px;outline:none;transition:border .15s;}
-select:hover,input:hover{border-color:var(--bd2);}
-select:focus,input:focus{border-color:var(--accent);}
+select{width:100%;padding:7px 10px;border:1px solid var(--bd);border-radius:var(--radius);background:var(--bg);color:var(--tx);font-family:var(--font);font-size:13px;outline:none;}
+select:hover{border-color:var(--bd2);}select:focus{border-color:var(--accent);}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
 .grid3{display:grid;gap:8px;margin-bottom:16px;}
-.trim-card{padding:10px;border:1px solid var(--bd);border-radius:var(--radius-lg);text-align:center;cursor:pointer;transition:all .15s;background:var(--bg);}
-.trim-card:hover{border-color:var(--bd2);background:var(--bg2);}
-.trim-card.active{border:2px solid var(--accent);background:var(--accent-bg);}
-.trim-card .name{font-size:13px;font-weight:600;margin-bottom:1px;}
-.trim-card .sub2{font-size:11px;color:var(--tx3);margin-bottom:6px;}
-.trim-card .price{font-size:15px;font-weight:600;}
+.tc{padding:10px;border:1px solid var(--bd);border-radius:var(--radius-lg);text-align:center;cursor:pointer;transition:all .15s;background:var(--bg);}
+.tc:hover{border-color:var(--bd2);background:var(--bg2);}
+.tc.a{border:2px solid var(--accent);background:var(--accent-bg);}
+.tc .n{font-size:13px;font-weight:600;margin-bottom:1px;}
+.tc .s2{font-size:11px;color:var(--tx3);margin-bottom:6px;}
+.tc .pr{font-size:15px;font-weight:600;}
 .note{font-size:12px;color:var(--warn-tx);background:var(--warn-bg);padding:8px 12px;border-radius:var(--radius);margin-bottom:12px;}
-.calc-box{background:var(--bg2);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:16px;}
-.calc-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;font-size:13px;}
-.calc-row .lbl{color:var(--tx2);}
-.calc-total{border-top:1px solid var(--bd);padding-top:8px;margin-top:4px;display:flex;justify-content:space-between;align-items:baseline;}
-.calc-total .lbl{font-weight:600;font-size:14px;}
-.calc-total .val{font-size:22px;font-weight:700;}
-.spec-box{border:1px solid var(--bd);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:16px;}
-.spec-box h3{font-size:14px;font-weight:600;margin-bottom:8px;}
-.spec-box p{font-size:12px;color:var(--tx2);margin-bottom:3px;}
-.gen-badge{font-size:12px;padding:7px 10px;background:var(--bg2);border-radius:var(--radius);border:1px solid var(--bd);}
+.cb{background:var(--bg2);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:16px;}
+.cr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;font-size:13px;}
+.cr .l{color:var(--tx2);}
+.ct{border-top:1px solid var(--bd);padding-top:8px;margin-top:4px;display:flex;justify-content:space-between;align-items:baseline;}
+.ct .l{font-weight:600;font-size:14px;}
+.ct .v{font-size:22px;font-weight:700;}
+.sb{border:1px solid var(--bd);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:16px;}
+.sb h3{font-size:14px;font-weight:600;margin-bottom:8px;}
+.sb p{font-size:12px;color:var(--tx2);margin-bottom:3px;}
+.gb{font-size:12px;padding:7px 10px;background:var(--bg2);border-radius:var(--radius);border:1px solid var(--bd);}
 details{margin-bottom:16px;}
-summary{font-size:14px;font-weight:600;cursor:pointer;padding:8px 0;user-select:none;}
+summary{font-size:14px;font-weight:600;cursor:pointer;padding:8px 0;}
 summary:hover{color:var(--accent);}
-.tl-table{width:100%;font-size:12px;border-collapse:collapse;}
-.tl-table th{text-align:left;padding:6px 4px;color:var(--tx2);border-bottom:1px solid var(--bd);font-weight:500;}
-.tl-table th:not(:first-child){text-align:right;}
-.tl-table td{padding:5px 4px;border-bottom:1px solid var(--bd);}
-.tl-table td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums;}
-.tl-note{font-size:11px;color:var(--tx3);margin-top:8px;}
+.tt{width:100%;font-size:12px;border-collapse:collapse;}
+.tt th{text-align:left;padding:6px 4px;color:var(--tx2);border-bottom:1px solid var(--bd);font-weight:500;}
+.tt th:not(:first-child){text-align:right;}
+.tt td{padding:5px 4px;border-bottom:1px solid var(--bd);}
+.tt td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums;}
+.tn{font-size:11px;color:var(--tx3);margin-top:8px;}
 .est{opacity:0.7;font-style:italic;}
 </style>
 </head>
 <body>
 <h2>테슬라 모델3 한국 가격표</h2>
-<p class="sub">2022~2025 시기별 트림 가격 + 옵션 조합 계산기 · 중형 전기 세단</p>
-
-<div class="grid2">
-<div>
-<label>시기 선택</label>
-<select id="period"></select>
-</div>
-<div>
-<label>세대</label>
-<div class="gen-badge" id="gen-badge"></div>
-</div>
-</div>
-
-<div class="note" id="note-box" style="display:none;"></div>
-
+<p class="sub">2022~2026 시기별 트림 가격 + 옵션 조합 계산기 · 최종 업데이트: 2026.04</p>
+<div class="grid2"><div><label>시기 선택</label><select id="period"></select></div><div><label>세대</label><div class="gb" id="gen"></div></div></div>
+<div class="note" id="nb" style="display:none;"></div>
 <div class="grid3" id="trims"></div>
-
-<div class="grid2">
-<div><label>외장 색상</label><select id="color"></select></div>
-<div><label>인테리어</label><select id="interior"><option value="0">All Black (기본)</option><option value="1286000">Black & White (+128.6만)</option></select></div>
-</div>
-<div class="grid2">
-<div><label>휠</label><select id="wheel"></select></div>
-<div><label>자율주행</label><select id="fsd"></select></div>
-</div>
-
-<div class="calc-box">
-<div class="calc-row"><span class="lbl">차량 기본가</span><span id="v-base">-</span></div>
-<div class="calc-row"><span class="lbl">옵션 합계</span><span id="v-opt">-</span></div>
-<div class="calc-total"><span class="lbl">총 차량가</span><span class="val" id="v-total">-</span></div>
-</div>
-
-<div class="spec-box" id="spec-box"></div>
-
-<details>
-<summary>전체 가격 변동 타임라인 (2022~2025)</summary>
-<div id="timeline"></div>
-</details>
-
+<div class="grid2"><div><label>외장 색상</label><select id="color"></select></div><div><label>인테리어</label><select id="int"><option value="0">All Black (기본)</option><option value="1286000">Black & White (+128.6만)</option></select></div></div>
+<div class="grid2"><div><label>휠</label><select id="wheel"></select></div><div><label>자율주행</label><select id="fsd"></select></div></div>
+<div class="cb"><div class="cr"><span class="l">차량 기본가</span><span id="vb">-</span></div><div class="cr"><span class="l">옵션 합계</span><span id="vo">-</span></div><div class="ct"><span class="l">총 차량가</span><span class="v" id="vt">-</span></div></div>
+<div class="sb" id="spec"></div>
+<details><summary>전체 가격 변동 타임라인 (2022~2026)</summary><div id="tl"></div></details>
 <script>
-const P=[
-{id:'22a',y:2022,label:'2022 상반기 (1~6월)',gen:'구형 (프리몬트)',
- trims:{lr:63990000,perf:73990000},
- note:'RWD 주문 중단 상태. LR AWD / Perf만 판매 (미국 프리몬트 생산). 가격 추정치(±100만)',
- colors:'old',hw:'HW3.0',est:true},
-
-{id:'22b',y:2022,label:'2022 하반기 (7~12월, 최고가)',gen:'구형 (프리몬트)',
- trims:{lr:72740000,perf:82990000},
- note:'원자재 폭등 역대 최고가. 모델Y와 함께 급등. 가격 추정치(±150만)',
- colors:'old',hw:'HW3.0',est:true},
-
-{id:'23a',y:2023,label:'2023.01 (대폭 인하)',gen:'구형 (프리몬트)',
- trims:{lr:63990000,perf:73190000},
- note:'원자재 하락으로 LR·Perf 약 10~12% 인하. 프리몬트 생산 유지',
- colors:'old',hw:'HW3.0',est:true},
-
-{id:'23b',y:2023,label:'2023.03 (마지막 가격)',gen:'구형 (프리몬트)',
- trims:{rwd:60340000,lr:68950000},
- note:'구형 마지막 판매 가격 (단종 직전). Perf 주문 중단. RWD 일시 재개',
- colors:'old',hw:'HW3.0'},
-
-{id:'23c',y:2023,label:'2023.07 (전 트림 주문 중단)',gen:'-',
- trims:{},
- note:'2023년 7월 14일부로 한국에서 모델3 전 트림 주문 중단. 하이랜드(페이스리프트) 준비',
- colors:'old',hw:'-',empty:true},
-
-{id:'24a',y:2024,label:'2024.04 (하이랜드 출시)',gen:'하이랜드 (기가상하이)',
- trims:{rwd:51990000,lr:59990000},
- note:'신형 모델3 하이랜드 출시. 구형 대비 800만+ 인하. 전량 중국산',
- colors:'highland',hw:'HW4.0'},
-
-{id:'24b',y:2024,label:'2024.04말 (Perf 추가)',gen:'하이랜드 (기가상하이)',
- trims:{rwd:51990000,lr:59990000,perf:64990000},
- note:'퍼포먼스 트림 추가 출시 (6,499만)',
- colors:'highland',hw:'HW4.0'},
-
-{id:'24c',y:2024,label:'2024.05 (Perf 인상)',gen:'하이랜드 (기가상하이)',
- trims:{rwd:51990000,lr:59990000,perf:69390000},
- note:'퍼포먼스 440만 인상 → 6,939만. RWD/LR 유지',
- colors:'highland',hw:'HW4.0'},
-
-{id:'25a',y:2025,label:'2025.12 (가격 인하 + 트림 재편)',gen:'하이랜드 (기가상하이)',
- trims:{perf:59990000},
- note:'RWD·LR 판매 중단. Perf만 940만 인하 → 5,999만. 신규 트림 출시 준비',
- colors:'highland',hw:'HW4.0'},
-
-{id:'26a',y:2026,label:'2026.01 (스탠다드·프리미엄 출시)',gen:'하이랜드 (기가상하이)',
- trims:{std:41990000,prem_lr:52990000,perf:59990000},
- note:'스탠다드 RWD 4,199만 (보조금 포함 시 3천만원대). 프리미엄 LR RWD 5,299만 신규. FSD 한국 미지원',
- colors:'highland26',hw:'HW4.0'}
+var P=[
+{id:'22a',y:2022,lb:'2022 상반기 (1~6월)',gn:'구형 (프리몬트)',t:{lr:63990000,perf:73990000},nt:'RWD 주문 중단. LR/Perf만 판매 (프리몬트). 추정치(±100만)',cl:'old',hw:'HW3.0',est:true},
+{id:'22b',y:2022,lb:'2022 하반기 (7~12월, 최고가)',gn:'구형 (프리몬트)',t:{lr:72740000,perf:82990000},nt:'원자재 폭등 역대 최고가. 추정치(±150만)',cl:'old',hw:'HW3.0',est:true},
+{id:'23a',y:2023,lb:'2023.01 (대폭 인하)',gn:'구형 (프리몬트)',t:{lr:63990000,perf:73190000},nt:'LR·Perf 약 10~12% 인하. 추정치(±100만)',cl:'old',hw:'HW3.0',est:true},
+{id:'23b',y:2023,lb:'2023.03 (마지막 가격)',gn:'구형 (프리몬트)',t:{rwd:60340000,lr:68950000},nt:'구형 마지막 판매 가격. Perf 주문 중단, RWD 일시 재개',cl:'old',hw:'HW3.0'},
+{id:'23c',y:2023,lb:'2023.07 (전 트림 주문 중단)',gn:'-',t:{},nt:'2023.07.14 전 트림 주문 중단. 하이랜드 준비',cl:'old',hw:'-',empty:true},
+{id:'24a',y:2024,lb:'2024.04 (하이랜드 출시)',gn:'하이랜드 (기가상하이)',t:{rwd:51990000,lr:59990000},nt:'신형 모델3 하이랜드 출시. 구형 대비 800만+ 인하. 전량 중국산',cl:'hl',hw:'HW4.0'},
+{id:'24b',y:2024,lb:'2024.04말 (Perf 추가)',gn:'하이랜드 (기가상하이)',t:{rwd:51990000,lr:59990000,perf:64990000},nt:'퍼포먼스 추가 출시 (6,499만)',cl:'hl',hw:'HW4.0'},
+{id:'24c',y:2024,lb:'2024.05 (Perf 인상)',gn:'하이랜드 (기가상하이)',t:{rwd:51990000,lr:59990000,perf:69390000},nt:'퍼포먼스 440만 인상 → 6,939만',cl:'hl',hw:'HW4.0'},
+{id:'25a',y:2025,lb:'2025.12 (트림 재편)',gn:'하이랜드 (기가상하이)',t:{perf:59990000},nt:'RWD·LR 판매 중단. Perf만 940만 인하 → 5,999만',cl:'hl',hw:'HW4.0'},
+{id:'26a',y:2026,lb:'2026.01 (스탠다드·프리미엄 출시)',gn:'하이랜드 (기가상하이)',t:{std:41990000,plr:52990000,perf:59990000},nt:'스탠다드 RWD 4,199만 (보조금 포함 시 3천만원대). 프리미엄 LR RWD 5,299만. FSD 미지원',cl:'hl26',hw:'HW4.0'}
 ];
-
-const colorSets={
-old:[
-  {n:'Pearl White (기본)',p:0},
-  {n:'Solid Black (+128.6만)',p:1286000},
-  {n:'Midnight Silver (+128.6만)',p:1286000},
-  {n:'Deep Blue (+128.6만)',p:1286000},
-  {n:'Red Multi-Coat (+257.1만)',p:2571000}
-],
-highland:[
-  {n:'Pearl White (기본)',p:0},
-  {n:'Solid Black (+192.9만)',p:1929000},
-  {n:'Stealth Grey (+128.6만)',p:1286000},
-  {n:'Ultra Red (+257.1만)',p:2571000},
-  {n:'Quicksilver (+275.9만)',p:2759000}
-],
-highland26:[
-  {n:'Stealth Grey (기본)',p:0},
-  {n:'Pearl White (+128.6만)',p:1286000},
-  {n:'Solid Black (+192.9만)',p:1929000},
-  {n:'Ultra Red (+257.1만)',p:2571000},
-  {n:'Quicksilver (+275.9만)',p:2759000}
-]
+var CS={
+old:[{n:'Pearl White (기본)',p:0},{n:'Solid Black (+128.6만)',p:1286000},{n:'Midnight Silver (+128.6만)',p:1286000},{n:'Deep Blue (+128.6만)',p:1286000},{n:'Red Multi-Coat (+257.1만)',p:2571000}],
+hl:[{n:'Pearl White (기본)',p:0},{n:'Solid Black (+192.9만)',p:1929000},{n:'Stealth Grey (+128.6만)',p:1286000},{n:'Ultra Red (+257.1만)',p:2571000},{n:'Quicksilver (+275.9만)',p:2759000}],
+hl26:[{n:'Stealth Grey (기본)',p:0},{n:'Pearl White (+128.6만)',p:1286000},{n:'Solid Black (+192.9만)',p:1929000},{n:'Ultra Red (+257.1만)',p:2571000},{n:'Quicksilver (+275.9만)',p:2759000}]
 };
-
-const wheelMap={
-rwd:[{n:'18" Photon (기본)',p:0},{n:'19" Nova (+128.6만)',p:1286000}],
-lr:[{n:'18" Photon (기본)',p:0},{n:'19" Nova (+128.6만)',p:1286000}],
-perf:[{n:'19" Nova (기본)',p:0},{n:'20" Warp (기본, 구형)',p:0}],
-std:[{n:'18" (기본)',p:0}],
-prem_lr:[{n:'18" Photon (기본)',p:0},{n:'19" Nova (+128.6만)',p:1286000}]
-};
-
-const TN={std:'Standard',rwd:'RWD',lr:'Long Range',perf:'Performance',prem_lr:'프리미엄 LR'};
-const TS={std:'후륜구동',rwd:'후륜구동',lr:'AWD 사륜구동',perf:'AWD 사륜구동',prem_lr:'후륜구동'};
-
-let cur,selTrim;
-const $=id=>document.getElementById(id);
-const fmt=n=>(n/10000).toLocaleString('ko-KR')+'만원';
-
-function init(){
-  const sel=$('period');
-  P.forEach(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=p.label;sel.appendChild(o);});
-  sel.onchange=load;
-  $('color').onchange=calc;$('interior').onchange=calc;$('wheel').onchange=calc;$('fsd').onchange=calc;
-  buildTimeline();load();
-}
-
-function load(){
-  cur=P.find(p=>p.id===$('period').value);
-  $('gen-badge').textContent=cur.gen+(cur.hw&&cur.hw!=='-'?' · '+cur.hw:'');
-  const nb=$('note-box');
-  if(cur.note){nb.textContent=cur.note;nb.style.display='block';}else nb.style.display='none';
-  const keys=Object.keys(cur.trims);
-  if(cur.empty||keys.length===0){
-    $('trims').innerHTML='<div style="grid-column:1/-1;text-align:center;padding:24px;color:var(--tx3);font-size:13px;">이 시기에는 한국에서 모델3 주문이 중단된 상태입니다.</div>';
-    $('trims').style.gridTemplateColumns='1fr';
-    selTrim=null;
-    $('v-base').textContent='-';$('v-opt').textContent='-';$('v-total').textContent='-';
-    renderSpec();return;
-  }
-  selTrim=keys.includes('rwd')?'rwd':keys[0];
-  renderTrims();renderColors();renderWheels();renderFsd();renderSpec();calc();
-}
-
-function renderTrims(){
-  const c=$('trims');c.innerHTML='';
-  const keys=Object.keys(cur.trims);
-  c.style.gridTemplateColumns=`repeat(${Math.min(keys.length,3)}, 1fr)`;
-  keys.forEach(k=>{
-    const s=k===selTrim;
-    const d=document.createElement('div');
-    d.className='trim-card'+(s?' active':'');
-    d.innerHTML=`<div class="name">${TN[k]||k}</div><div class="sub2">${TS[k]||''}</div><div class="price">${fmt(cur.trims[k])}</div>`;
-    d.onclick=()=>{selTrim=k;renderTrims();renderWheels();calc();};
-    c.appendChild(d);
-  });
-}
-
-function renderColors(){
-  const sel=$('color');sel.innerHTML='';
-  (colorSets[cur.colors]||colorSets.old).forEach(c=>{
-    const o=document.createElement('option');o.value=c.p;o.textContent=c.n;sel.appendChild(o);
-  });
-}
-
-function renderWheels(){
-  const sel=$('wheel');sel.innerHTML='';
-  const wl=wheelMap[selTrim]||[{n:'기본 휠',p:0}];
-  // Filter: for highland perf, only Nova
-  let filtered=wl;
-  if(cur.gen&&cur.gen.includes('하이랜드')&&selTrim==='perf'){
-    filtered=[{n:'19" Nova (기본)',p:0}];
-  }
-  if(cur.gen&&cur.gen.includes('구형')&&selTrim==='perf'){
-    filtered=[{n:'20" Überturbine (기본)',p:0}];
-  }
-  filtered.forEach(w=>{
-    const o=document.createElement('option');o.value=w.p;o.textContent=w.n;sel.appendChild(o);
-  });
-}
-
-function renderFsd(){
-  const sel=$('fsd');sel.innerHTML='<option value="0">오토파일럿 (기본)</option>';
-  if(cur.y<=2023&&!cur.empty){
-    sel.innerHTML+='<option value="8900000">FSD 완전자율주행 (+890만)</option>';
-    sel.innerHTML+='<option value="4500000">향상된 오토파일럿 (+450만)</option>';
-  }
-  // Highland onwards: FSD not available in Korea for Chinese-made
-}
-
-function renderSpec(){
-  const box=$('spec-box');
-  const S={
-    '22a':{b:'LR: 리튬이온 2170 (LG/파나소닉), Perf: 리튬이온',r:'LR ~568km, Perf ~547km',m:'LR: 듀얼모터 AWD, Perf: 듀얼모터 AWD',p:'미국 프리몬트',extra:'18"/19" 에어로/스포트 휠'},
-    '22b':{b:'LR: 리튬이온 2170 (LG/파나소닉), Perf: 리튬이온',r:'LR ~568km, Perf ~547km',m:'LR: 듀얼모터 AWD, Perf: 듀얼모터 AWD',p:'미국 프리몬트',extra:''},
-    '23a':{b:'LR: 리튬이온 (LG), Perf: 리튬이온',r:'LR ~568km, Perf ~547km',m:'LR: 듀얼모터 AWD, Perf: 듀얼모터 AWD',p:'미국 프리몬트',extra:''},
-    '23b':{b:'RWD: 리튬이온, LR: 리튬이온 (LG)',r:'RWD ~496km, LR ~568km',m:'RWD: 싱글 후륜, LR: 듀얼 AWD',p:'미국 프리몬트',extra:''},
-    '23c':{b:'-',r:'-',m:'-',p:'-',extra:'주문 중단 기간'},
-    '24a':{b:'RWD: LFP(CATL) / LR: NCM(LG)',r:'RWD ~382km, LR ~488km',m:'RWD: 싱글 후륜 / LR: 듀얼 AWD',p:'중국 기가상하이',extra:'2중접합유리(전·후·측면), 주파수반응형 쇼크업소버'},
-    '24b':{b:'RWD: LFP(CATL) / LR: NCM(LG) / Perf: NCM',r:'RWD ~382km, LR ~488km, Perf ~460km',m:'RWD: 싱글 후륜 / LR·Perf: 듀얼 AWD',p:'중국 기가상하이',extra:'2중접합유리, 주파수반응형 쇼크업소버'},
-    '24c':{b:'RWD: LFP(CATL) / LR: NCM(LG) / Perf: NCM',r:'RWD ~382km, LR ~488km, Perf ~460km',m:'RWD: 싱글 후륜 / LR·Perf: 듀얼 AWD',p:'중국 기가상하이',extra:''},
-    '25a':{b:'Perf: NCM(LG)',r:'Perf ~460km',m:'듀얼모터 AWD',p:'중국 기가상하이',extra:'RWD·LR 판매중단'},
-    '26a':{b:'Std: LFP(축소) / Prem LR: NCM(LG) / Perf: NCM',r:'Std ~363km, Prem LR ~551km, Perf ~460km',m:'Std·Prem LR: 싱글 후륜 / Perf: 듀얼 AWD',p:'중국 기가상하이',extra:'스탠다드: 주파수반응형 쇼크업소버 미탑재, 하위 모터'}
-  };
-  const s=S[cur.id]||{};
-  box.innerHTML=`<h3>주요 제원</h3>
-    <p>&#8226; 배터리: ${s.b||'-'}</p>
-    <p>&#8226; 주행거리: ${s.r||'-'}</p>
-    <p>&#8226; 구동: ${s.m||'-'}</p>
-    <p>&#8226; 생산지: ${s.p||'-'}</p>
-    <p>&#8226; 하드웨어: ${cur.hw||'-'}</p>
-    ${s.extra?'<p>&#8226; 특이사항: '+s.extra+'</p>':''}`;
-}
-
-function calc(){
-  if(!selTrim||cur.empty){return;}
-  const base=cur.trims[selTrim];
-  const cp=parseInt($('color').value)||0;
-  const ip=parseInt($('interior').value)||0;
-  const wp=parseInt($('wheel').value)||0;
-  const fp=parseInt($('fsd').value)||0;
-  const opt=cp+ip+wp+fp;
-  $('v-base').textContent=fmt(base);
-  $('v-opt').textContent=opt>0?'+'+fmt(opt):'0원';
-  $('v-total').textContent=fmt(base+opt);
-}
-
-function buildTimeline(){
-  let h='<table class="tl-table"><tr><th>시기</th><th>RWD/Std</th><th>LR</th><th>Perf</th></tr>';
-  P.forEach(p=>{
-    if(p.empty){
-      h+=`<tr><td style="white-space:nowrap;">${p.label.split('(')[0].trim()}</td><td colspan="3" style="text-align:center;color:var(--tx3);">주문 중단</td></tr>`;
-      return;
-    }
-    const r=p.trims.rwd||p.trims.std||p.trims.prem_lr||null;
-    const l=p.trims.lr||null;
-    const pf=p.trims.perf||null;
-    const e=p.est?' class="est"':'';
-    h+=`<tr><td style="white-space:nowrap;">${p.label.split('(')[0].trim()}</td>
-      <td${e}>${r?Math.round(r/10000).toLocaleString():'—'}</td>
-      <td${e}>${l?Math.round(l/10000).toLocaleString():'—'}</td>
-      <td${e}>${pf?Math.round(pf/10000).toLocaleString():'—'}</td></tr>`;
-  });
-  h+='</table><p class="tl-note">단위: 만원 · <em>이탤릭체</em> = 추정치(±100~150만) · 2026.01 데이터 참고용 포함</p>';
-  $('timeline').innerHTML=h;
-}
-
+var WM={rwd:[{n:'18" Photon (기본)',p:0},{n:'19" Nova (+128.6만)',p:1286000}],lr:[{n:'18" Photon (기본)',p:0},{n:'19" Nova (+128.6만)',p:1286000}],perf:[{n:'19" Nova (기본)',p:0}],std:[{n:'18" (기본)',p:0}],plr:[{n:'18" Photon (기본)',p:0},{n:'19" Nova (+128.6만)',p:1286000}]};
+var TN={std:'Standard',rwd:'RWD',lr:'Long Range',perf:'Performance',plr:'프리미엄 LR'};
+var TS2={std:'후륜구동',rwd:'후륜구동',lr:'AWD',perf:'AWD',plr:'후륜구동'};
+var c,st;
+function $(i){return document.getElementById(i);}
+function f(n){return(n/10000).toLocaleString('ko-KR')+'만원';}
+function init(){var s=$('period');P.forEach(function(p){var o=document.createElement('option');o.value=p.id;o.textContent=p.lb;s.appendChild(o);});s.value='26a';s.onchange=ld;$('color').onchange=calc;$('int').onchange=calc;$('wheel').onchange=calc;$('fsd').onchange=calc;bt();ld();}
+function ld(){c=P.find(function(p){return p.id===$('period').value;});$('gen').textContent=c.gn+(c.hw&&c.hw!=='-'?' · '+c.hw:'');var nb=$('nb');if(c.nt){nb.textContent=c.nt;nb.style.display='block';}else nb.style.display='none';var k=Object.keys(c.t);if(c.empty||k.length===0){$('trims').innerHTML='<div style="grid-column:1/-1;text-align:center;padding:24px;color:var(--tx3);font-size:13px;">이 시기에는 주문이 중단된 상태입니다.</div>';$('trims').style.gridTemplateColumns='1fr';st=null;$('vb').textContent='-';$('vo').textContent='-';$('vt').textContent='-';rs();return;}st=k.indexOf('rwd')>=0?'rwd':k[0];rt();rc();rw();rf();rs();calc();}
+function rt(){var d=$('trims');d.innerHTML='';var k=Object.keys(c.t);d.style.gridTemplateColumns='repeat('+Math.min(k.length,3)+', 1fr)';k.forEach(function(x){var a=x===st,e=document.createElement('div');e.className='tc'+(a?' a':'');e.innerHTML='<div class="n">'+(TN[x]||x)+'</div><div class="s2">'+(TS2[x]||'')+'</div><div class="pr">'+f(c.t[x])+'</div>';e.onclick=function(){st=x;rt();rw();calc();};d.appendChild(e);});}
+function rc(){var s=$('color');s.innerHTML='';(CS[c.cl]||CS.old).forEach(function(x){var o=document.createElement('option');o.value=x.p;o.textContent=x.n;s.appendChild(o);});}
+function rw(){var s=$('wheel');s.innerHTML='';var wl=WM[st]||[{n:'기본 휠',p:0}];if(c.gn&&c.gn.indexOf('구형')>=0&&st==='perf')wl=[{n:'20" Überturbine (기본)',p:0}];wl.forEach(function(w){var o=document.createElement('option');o.value=w.p;o.textContent=w.n;s.appendChild(o);});}
+function rf(){var s=$('fsd');s.innerHTML='<option value="0">오토파일럿 (기본)</option>';if(c.y<=2023&&!c.empty)s.innerHTML+='<option value="8900000">FSD (+890만)</option><option value="4500000">향상된 오토파일럿 (+450만)</option>';}
+function rs(){var b=$('spec'),S={'22a':{b:'LR: 리튬이온 2170(LG/파나), Perf: 리튬이온',r:'LR~568, Perf~547km',m:'듀얼모터 AWD',p:'프리몬트'},'22b':{b:'LR: 리튬이온 2170(LG/파나), Perf: 리튬이온',r:'LR~568, Perf~547km',m:'듀얼모터 AWD',p:'프리몬트'},'23a':{b:'LR: 리튬이온(LG), Perf: 리튬이온',r:'LR~568, Perf~547km',m:'듀얼모터 AWD',p:'프리몬트'},'23b':{b:'RWD: 리튬이온, LR: 리튬이온(LG)',r:'RWD~496, LR~568km',m:'RWD싱글 / LR듀얼',p:'프리몬트'},'23c':{b:'-',r:'-',m:'-',p:'-',x:'주문 중단 기간'},'24a':{b:'RWD:LFP(CATL) / LR:NCM(LG)',r:'RWD~382, LR~488km',m:'RWD싱글 / LR듀얼',p:'기가상하이',x:'이중접합유리, 주파수반응형 쇼크업소버'},'24b':{b:'RWD:LFP / LR:NCM / Perf:NCM',r:'RWD~382, LR~488, Perf~460km',m:'RWD싱글 / LR·Perf듀얼',p:'기가상하이'},'24c':{b:'RWD:LFP / LR:NCM / Perf:NCM',r:'RWD~382, LR~488, Perf~460km',m:'RWD싱글 / LR·Perf듀얼',p:'기가상하이'},'25a':{b:'Perf: NCM(LG)',r:'Perf~460km',m:'듀얼모터 AWD',p:'기가상하이',x:'RWD·LR 판매중단'},'26a':{b:'Std:LFP(축소) / PLR:NCM(LG) / Perf:NCM',r:'Std~363, PLR~551, Perf~460km',m:'Std·PLR싱글후륜 / Perf듀얼',p:'기가상하이',x:'스탠다드: 주파수반응형 쇼크업소버 미탑재'}};var s=S[c.id]||{};b.innerHTML='<h3>주요 제원</h3><p>&#8226; 배터리: '+(s.b||'-')+'</p><p>&#8226; 주행거리: '+(s.r||'-')+'</p><p>&#8226; 구동: '+(s.m||'-')+'</p><p>&#8226; 생산지: '+(s.p||'-')+'</p><p>&#8226; 하드웨어: '+(c.hw||'-')+'</p>'+(s.x?'<p>&#8226; 특이사항: '+s.x+'</p>':'');}
+function calc(){if(!st||c.empty)return;var b=c.t[st],cp=parseInt($('color').value)||0,ip=parseInt($('int').value)||0,wp=parseInt($('wheel').value)||0,fp=parseInt($('fsd').value)||0,o=cp+ip+wp+fp;$('vb').textContent=f(b);$('vo').textContent=o>0?'+'+f(o):'0원';$('vt').textContent=f(b+o);}
+function bt(){var h='<table class="tt"><tr><th>시기</th><th>RWD/Std</th><th>LR</th><th>Perf</th></tr>';P.forEach(function(p){if(p.empty){h+='<tr><td style="white-space:nowrap;">'+p.lb.split('(')[0].trim()+'</td><td colspan="3" style="text-align:center;color:var(--tx3);">주문 중단</td></tr>';return;}var r=p.t.rwd||p.t.std||p.t.plr||null,l=p.t.lr||null,pf=p.t.perf||null,e=p.est?' class="est"':'';h+='<tr><td style="white-space:nowrap;">'+p.lb.split('(')[0].trim()+'</td><td'+e+'>'+(r?Math.round(r/10000).toLocaleString():'—')+'</td><td'+e+'>'+(l?Math.round(l/10000).toLocaleString():'—')+'</td><td'+e+'>'+(pf?Math.round(pf/10000).toLocaleString():'—')+'</td></tr>';});h+='</table><p class="tn">단위: 만원 · <em>이탤릭</em> = 추정치(±100~150만)</p>';$('tl').innerHTML=h;}
 init();
 </script>
 </body>
