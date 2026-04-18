@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>테슬라 모델Y 한국 가격표 (2022~2026)</title>
+<link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#fff;--bg2:#f7f7f5;--tx:#1a1a1a;--tx2:#6b6b6b;--tx3:#9b9b9b;--bd:#e3e2de;--bd2:#d4d3cf;--accent:#2383e2;--accent-bg:#e8f0fe;--warn-bg:#fef3cd;--warn-tx:#856404;--radius:6px;--radius-lg:8px;--font:'Pretendard Variable','Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+@media(prefers-color-scheme:dark){:root{--bg:#191919;--bg2:#252525;--tx:#e0e0e0;--tx2:#999;--tx3:#666;--bd:#3a3a3a;--bd2:#4a4a4a;--accent:#529cca;--accent-bg:#1a2d3d;--warn-bg:#3d3520;--warn-tx:#d4a843;}}
+body{font-family:var(--font);background:var(--bg);color:var(--tx);font-size:14px;line-height:1.6;padding:20px;max-width:720px;margin:0 auto;}
+h2{font-size:20px;font-weight:600;margin-bottom:2px;}
+.sub{font-size:12px;color:var(--tx2);margin-bottom:20px;}
+label{font-size:13px;color:var(--tx2);display:block;margin-bottom:4px;}
+select{width:100%;padding:7px 10px;border:1px solid var(--bd);border-radius:var(--radius);background:var(--bg);color:var(--tx);font-family:var(--font);font-size:13px;outline:none;}
+select:hover{border-color:var(--bd2);}select:focus{border-color:var(--accent);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+.grid3{display:grid;gap:8px;margin-bottom:16px;}
+.tc{padding:10px;border:1px solid var(--bd);border-radius:var(--radius-lg);text-align:center;cursor:pointer;transition:all .15s;background:var(--bg);}
+.tc:hover{border-color:var(--bd2);background:var(--bg2);}
+.tc.a{border:2px solid var(--accent);background:var(--accent-bg);}
+.tc .n{font-size:13px;font-weight:600;margin-bottom:1px;}
+.tc .s2{font-size:11px;color:var(--tx3);margin-bottom:6px;}
+.tc .pr{font-size:15px;font-weight:600;}
+.note{font-size:12px;color:var(--warn-tx);background:var(--warn-bg);padding:8px 12px;border-radius:var(--radius);margin-bottom:12px;}
+.cb{background:var(--bg2);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:16px;}
+.cr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;font-size:13px;}
+.cr .l{color:var(--tx2);}
+.ct{border-top:1px solid var(--bd);padding-top:8px;margin-top:4px;display:flex;justify-content:space-between;align-items:baseline;}
+.ct .l{font-weight:600;font-size:14px;}
+.ct .v{font-size:22px;font-weight:700;}
+.sb{border:1px solid var(--bd);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:16px;}
+.sb h3{font-size:14px;font-weight:600;margin-bottom:8px;}
+.sb p{font-size:12px;color:var(--tx2);margin-bottom:3px;}
+.gb{font-size:12px;padding:7px 10px;background:var(--bg2);border-radius:var(--radius);border:1px solid var(--bd);}
+details{margin-bottom:16px;}
+summary{font-size:14px;font-weight:600;cursor:pointer;padding:8px 0;}
+summary:hover{color:var(--accent);}
+.tt{width:100%;font-size:12px;border-collapse:collapse;}
+.tt th{text-align:left;padding:6px 4px;color:var(--tx2);border-bottom:1px solid var(--bd);font-weight:500;}
+.tt th:not(:first-child){text-align:right;}
+.tt td{padding:5px 4px;border-bottom:1px solid var(--bd);}
+.tt td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums;}
+.tn{font-size:11px;color:var(--tx3);margin-top:8px;}
+</style>
+</head>
+<body>
+<h2>테슬라 모델Y 한국 가격표</h2>
+<p class="sub">2022~2026 시기별 트림 가격 + 옵션 조합 계산기 · 최종 업데이트: 2026.04.18</p>
+<div class="grid2"><div><label>시기 선택</label><select id="period"></select></div><div><label>세대</label><div class="gb" id="gen"></div></div></div>
+<div class="note" id="nb" style="display:none;"></div>
+<div class="grid3" id="trims"></div>
+<div class="grid2"><div><label>외장 색상</label><select id="color"></select></div><div><label>인테리어</label><select id="int"></select></div></div>
+<div class="grid2"><div><label>휠</label><select id="wheel"></select></div><div><label>자율주행</label><select id="fsd"></select></div></div>
+<div class="cb"><div class="cr"><span class="l">차량 기본가</span><span id="vb">-</span></div><div class="cr"><span class="l">옵션 합계</span><span id="vo">-</span></div><div class="ct"><span class="l">총 차량가</span><span class="v" id="vt">-</span></div></div>
+<div class="sb" id="spec"></div>
+<details><summary>전체 가격 변동 타임라인 (2022~2026)</summary><div id="tl"></div></details>
+<script>
+var P=[
+{id:'22a',y:2022,lb:'2022 상반기 (1~6월)',gn:'초기형 (프리몬트)',t:{lr:78990000,perf:85990000},nt:'RWD 미판매. LR/Perf만 (미국 프리몬트)',cl:'old',hw:'HW3.0',it:'old'},
+{id:'22b',y:2022,lb:'2022 하반기 (7~12월, 최고가)',gn:'초기형 (프리몬트)',t:{lr:89490000,perf:99900000},nt:'원자재 폭등 역대 최고가. Perf 1억 돌파',cl:'old',hw:'HW3.0',it:'old'},
+{id:'23a',y:2023,lb:'2023.01 (대폭 인하)',gn:'초기형 (프리몬트)',t:{lr:78740000,perf:85340000},nt:'LR ~12%, Perf ~9.6% 인하',cl:'old',hw:'HW3.0',it:'old'},
+{id:'23b',y:2023,lb:'2023.07 (RWD 첫 출시)',gn:'초기형 (기가상하이)',t:{rwd:56990000},nt:'중국산 RWD(LFP) 최초 출시. LR/Perf 주문 중단',cl:'old',hw:'HW3.0',it:'old'},
+{id:'24a',y:2024,lb:'2024.02 (보조금 맞춤 인하)',gn:'초기형 (기가상하이)',t:{rwd:54990000},nt:'보조금 기준 5,500만 맞춤 200만 인하',cl:'old',hw:'HW3.0',it:'old'},
+{id:'24b',y:2024,lb:'2024.04 (풀라인업 재출시)',gn:'초기형 (전량 중국산)',t:{rwd:54990000,lr:63990000,perf:71990000},nt:'전 트림 중국산 전환 + HW4.0',cl:'n24',hw:'HW4.0',it:'old'},
+{id:'24c',y:2024,lb:'2024.04말 (RWD 추가인하)',gn:'초기형 (전량 중국산)',t:{rwd:52990000,lr:63990000,perf:71990000},nt:'RWD 200만 추가인하 → 5,299만',cl:'n24',hw:'HW4.0',it:'old'},
+{id:'24d',y:2024,lb:'2024.07 (LR 인하)',gn:'초기형 (전량 중국산)',t:{rwd:52990000,lr:60990000,perf:71990000},nt:'LR 300만 인하 → 6,099만',cl:'n24',hw:'HW4.0',it:'old'},
+{id:'24e',y:2024,lb:'2024.09 (즉시출고 할인)',gn:'초기형 (전량 중국산)',t:{rwd:47390000,lr:55490000,perf:66490000},nt:'재고차 한정 최대 550만 할인',cl:'n24',hw:'HW4.0',it:'old'},
+{id:'24f',y:2024,lb:'2024.12 (연말 조정)',gn:'초기형 (전량 중국산)',t:{rwd:49990000,lr:59990000},nt:'Perf 판매중단. 주니퍼 출시 대비',cl:'n24',hw:'HW4.0',it:'old'},
+{id:'25a',y:2025,lb:'2025.04 (주니퍼 출시)',gn:'주니퍼 (기가상하이)',t:{rwd:52990000,lr:63140000,launch:73000000},nt:'신형 주니퍼 출시. RWD/LR/런치시리즈',cl:'jp',hw:'HW4.0',it:'old'},
+{id:'25b',y:2025,lb:'2025.07 (잠수함 패치)',gn:'주니퍼 (기가상하이)',t:{rwd:52990000,lr:63140000},nt:'LR 배터리 81.6→84.85kWh. 다이아몬드블랙 추가',cl:'jpd',hw:'HW4.0',it:'old'},
+{id:'25c',y:2025,lb:'2025.10 (스탠다드 추가)',gn:'주니퍼 (기가상하이)',t:{std:47100000,rwd:52990000,lr:63140000},nt:'스탠다드 추가. 런치시리즈 종료',cl:'jpd',hw:'HW4.0',it:'old'},
+{id:'25d',y:2025,lb:'2025.12 (가격인하)',gn:'주니퍼 (기가상하이)',t:{rwd:49990000,lr:59990000},nt:'RWD -300만, LR -315만. 스탠다드 단종 예정',cl:'jpd',hw:'HW4.0',it:'old'},
+{id:'26a',y:2026,lb:'2026.04.03 (모델Y L 출시)',gn:'주니퍼 (기가상하이)',t:{prwd:49990000,plr:59990000,yl:64990000},nt:'모델Y L(롱바디) 6인승 출시 6,499만',cl:'jpd',hw:'HW4.0',it:'old'},
+{id:'26b',y:2026,lb:'2026.04.10 (가격인상, 현재)',gn:'주니퍼 (기가상하이)',t:{prwd:49990000,plr:63990000,yl:69990000},nt:'LR +400만→6,399만, YL +500만→6,999만. RWD 유지. 인테리어: White 단종→Zen Grey 신규',cl:'jpd',hw:'HW4.0',it:'zen'}
+];
+var CS={
+old:[{n:'Pearl White (기본)',p:0},{n:'Solid Black (+128.6만)',p:1286000},{n:'Midnight Silver (+128.6만)',p:1286000},{n:'Deep Blue (+128.6만)',p:1286000},{n:'Red Multi-Coat (+257.1만)',p:2571000}],
+n24:[{n:'Pearl White (기본)',p:0},{n:'Solid Black (+192.9만)',p:1929000},{n:'Stealth Grey (+128.6만)',p:1286000},{n:'Ultra Red (+257.1만)',p:2571000},{n:'Quicksilver (+275.9만)',p:2759000}],
+jp:[{n:'Stealth Grey (기본)',p:0},{n:'Pearl White (+128.6만)',p:1286000},{n:'Solid Black (+192.9만)',p:1929000},{n:'Ultra Red (+257.1만)',p:2571000},{n:'Quicksilver (+275.9만)',p:2759000},{n:'Glacier Blue (+257.1만)',p:2571000}],
+jpd:[{n:'Stealth Grey (기본)',p:0},{n:'Pearl White (+128.6만)',p:1286000},{n:'Solid Black (+192.9만)',p:1929000},{n:'Ultra Red (+257.1만)',p:2571000},{n:'Quicksilver (+275.9만)',p:2759000},{n:'Glacier Blue (+257.1만)',p:2571000},{n:'Diamond Black (+257.1만)',p:2571000}]
+};
+var IT={
+old:[{n:'All Black (기본)',p:0},{n:'Black & White (+128.6만)',p:1286000}],
+zen:[{n:'All Black (기본)',p:0},{n:'Zen Grey (+192.9만)',p:1929000}]
+};
+var WM={rwd:[{n:'19" Gemini (기본)',p:0}],lr:[{n:'19" Gemini (기본)',p:0},{n:'20" Induction (+128.6만)',p:1286000}],perf:[{n:'21" Überturbine (기본)',p:0}],std:[{n:'18" Photon (기본)',p:0}],launch:[{n:'20" (기본)',p:0}],prwd:[{n:'19" Crossflow (기본)',p:0}],plr:[{n:'19" Crossflow (기본)',p:0},{n:'20" Helix 2.0 (+128.6만)',p:1286000}],yl:[{n:'20" (기본)',p:0}]};
+var TN={std:'Standard',rwd:'RWD',lr:'Long Range',perf:'Performance',launch:'Launch Series',prwd:'프리미엄 RWD',plr:'프리미엄 LR',yl:'모델Y L'};
+var TS2={std:'후륜구동',rwd:'후륜구동',lr:'AWD',perf:'AWD',launch:'AWD 한정판',prwd:'후륜구동',plr:'AWD',yl:'AWD 6인승'};
+var c,st;
+function $(i){return document.getElementById(i);}
+function f(n){return(n/10000).toLocaleString('ko-KR')+'만원';}
+function init(){var s=$('period');P.forEach(function(p){var o=document.createElement('option');o.value=p.id;o.textContent=p.lb;s.appendChild(o);});s.value='26b';s.onchange=ld;$('color').onchange=calc;$('int').onchange=calc;$('wheel').onchange=calc;$('fsd').onchange=calc;bt();ld();}
+function ld(){c=P.find(function(p){return p.id===$('period').value;});$('gen').textContent=c.gn+' · '+c.hw;var nb=$('nb');if(c.nt){nb.textContent=c.nt;nb.style.display='block';}else nb.style.display='none';var k=Object.keys(c.t);st=k.indexOf('rwd')>=0?'rwd':(k.indexOf('prwd')>=0?'prwd':k[0]);rt();rc();ri();rw();rf();rs();calc();}
+function rt(){var d=$('trims');d.innerHTML='';var k=Object.keys(c.t);d.style.gridTemplateColumns='repeat('+Math.min(k.length,4)+', 1fr)';k.forEach(function(x){var a=x===st,e=document.createElement('div');e.className='tc'+(a?' a':'');e.innerHTML='<div class="n">'+(TN[x]||x)+'</div><div class="s2">'+(TS2[x]||'')+'</div><div class="pr">'+f(c.t[x])+'</div>';e.onclick=function(){st=x;rt();rw();calc();};d.appendChild(e);});}
+function rc(){var s=$('color');s.innerHTML='';(CS[c.cl]||CS.old).forEach(function(x){var o=document.createElement('option');o.value=x.p;o.textContent=x.n;s.appendChild(o);});}
+function ri(){var s=$('int');s.innerHTML='';(IT[c.it]||IT.old).forEach(function(x){var o=document.createElement('option');o.value=x.p;o.textContent=x.n;s.appendChild(o);});}
+function rw(){var s=$('wheel');s.innerHTML='';(WM[st]||[{n:'기본 휠',p:0}]).forEach(function(x){var o=document.createElement('option');o.value=x.p;o.textContent=x.n;s.appendChild(o);});}
+function rf(){var s=$('fsd');s.innerHTML='<option value="0">오토파일럿 (기본)</option>';if(c.y>=2025)s.innerHTML+='<option value="9040000">FSD (+904만)</option>';if(c.y<=2023&&c.id!=='23b'){s.innerHTML+='<option value="8900000">FSD (+890만)</option>';s.innerHTML+='<option value="4500000">향상된 오토파일럿 (+450만)</option>';}}
+function rs(){var b=$('spec'),S={'22a':{b:'LR/Perf: 리튬이온(LG/파나)',r:'LR~511, Perf~488km',m:'듀얼AWD',p:'프리몬트'},'22b':{b:'LR/Perf: 리튬이온(LG/파나)',r:'LR~511, Perf~488km',m:'듀얼AWD',p:'프리몬트'},'23a':{b:'LR/Perf: 리튬이온(LG/파나)',r:'LR~511, Perf~488km',m:'듀얼AWD',p:'프리몬트'},'23b':{b:'RWD: LFP(CATL)',r:'~350km',m:'싱글후륜',p:'기가상하이'},'24a':{b:'RWD: LFP(CATL)',r:'~350km',m:'싱글후륜',p:'기가상하이'},'24b':{b:'RWD:LFP / LR·Perf:리튬이온(LG)',r:'RWD~356, LR~486, Perf~449km',m:'RWD싱글 / LR·Perf듀얼',p:'전량 기가상하이'},'24c':{b:'RWD:LFP / LR·Perf:리튬이온(LG)',r:'RWD~356, LR~486, Perf~449km',m:'RWD싱글 / LR·Perf듀얼',p:'전량 기가상하이'},'24d':{b:'RWD:LFP / LR·Perf:리튬이온(LG)',r:'RWD~356, LR~486, Perf~449km',m:'RWD싱글 / LR·Perf듀얼',p:'전량 기가상하이'},'24e':{b:'RWD:LFP / LR·Perf:리튬이온(LG)',r:'RWD~356, LR~486, Perf~449km',m:'RWD싱글 / LR·Perf듀얼',p:'전량 기가상하이'},'24f':{b:'RWD:LFP / LR:리튬이온(LG)',r:'RWD~356, LR~486km',m:'RWD싱글 / LR듀얼',p:'전량 기가상하이'},'25a':{b:'RWD:LFP 62.5kWh / LR:삼원계 78.4kWh',r:'RWD~400, LR~476km',m:'RWD싱글299hp / LR듀얼450hp',p:'기가상하이'},'25b':{b:'RWD:LFP 62.5kWh / LR:삼원계 84.85kWh',r:'RWD~400, LR~523km',m:'RWD싱글 / LR듀얼',p:'기가상하이'},'25c':{b:'Std:LFP(축소) / RWD:LFP / LR:삼원계',r:'Std~360, RWD~400, LR~523km',m:'Std·RWD싱글 / LR듀얼',p:'기가상하이'},'25d':{b:'RWD:LFP / LR:삼원계',r:'RWD~400, LR~505km',m:'RWD싱글 / LR듀얼',p:'기가상하이'},'26a':{b:'RWD:LFP / LR:삼원계 / YL:삼원계(대용량)',r:'RWD~400, LR~505, YL~543km',m:'RWD싱글 / LR·YL듀얼',p:'기가상하이',x:'모델Y L: 휠베이스3,040mm 6인승 적재2,539L'},'26b':{b:'RWD:LFP / LR:삼원계 / YL:삼원계(대용량)',r:'RWD~400, LR~505, YL~543km',m:'RWD싱글 / LR·YL듀얼',p:'기가상하이',x:'모델Y L: 6인승. 인테리어 White→Zen Grey 변경'}};var s=S[c.id]||{};b.innerHTML='<h3>주요 제원</h3><p>&#8226; 배터리: '+(s.b||'-')+'</p><p>&#8226; 주행거리: '+(s.r||'-')+'</p><p>&#8226; 구동: '+(s.m||'-')+'</p><p>&#8226; 생산지: '+(s.p||'-')+'</p><p>&#8226; HW: '+c.hw+'</p>'+(s.x?'<p>&#8226; 특이사항: '+s.x+'</p>':'');}
+function calc(){var b=c.t[st],cp=parseInt($('color').value)||0,ip=parseInt($('int').value)||0,wp=parseInt($('wheel').value)||0,fp=parseInt($('fsd').value)||0,o=cp+ip+wp+fp;$('vb').textContent=f(b);$('vo').textContent=o>0?'+'+f(o):'0원';$('vt').textContent=f(b+o);}
+function bt(){var h='<table class="tt"><tr><th>시기</th><th>RWD/Std</th><th>LR</th><th>Perf/기타</th></tr>';P.forEach(function(p){var r=p.t.rwd||p.t.std||p.t.prwd||null,l=p.t.lr||p.t.plr||null,pf=p.t.perf||p.t.launch||p.t.yl||null;h+='<tr><td style="white-space:nowrap;">'+p.lb.split('(')[0].trim()+'</td><td>'+(r?Math.round(r/10000).toLocaleString():'—')+'</td><td>'+(l?Math.round(l/10000).toLocaleString():'—')+'</td><td>'+(pf?Math.round(pf/10000).toLocaleString():'—')+'</td></tr>';});h+='</table><p class="tn">단위: 만원 · 2022 하반기 추정치(±50만)</p>';$('tl').innerHTML=h;}
+init();
+</script>
+</body>
+</html>
